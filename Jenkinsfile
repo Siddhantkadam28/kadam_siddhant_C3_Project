@@ -12,7 +12,7 @@ pipeline {
         stage ('connection to web-server'){
             steps{ 
                  // Use Jenkins credentials
-                    withCredentials([sshUserPrivateKey(credentialsId: 'credentilas', keyFileVariable: 'SSH_KEY')]) {
+                    withCredentials([sshUserPrivateKey(credentialsId: 'application', keyFileVariable: 'SSH_KEY')]) {
                         sh '''
                           ssh -i $SSH_KEY -o StrictHostKeyChecking=no ec2-user@54.198.63.12 "hostname -i"
                         '''
