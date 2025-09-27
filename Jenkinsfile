@@ -1,9 +1,6 @@
 pipeline {
     agent any
 
- pipeline {
-    agent any
-
     stages {
         stage('Checkout Code') {
             steps {
@@ -31,4 +28,3 @@ pipeline {
     }
 }
 
-}
