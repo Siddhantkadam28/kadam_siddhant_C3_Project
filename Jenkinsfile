@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-          stages('checkout code'){
+          stage('checkout code'){
               steps{
               checkout scm
               sh "pwd"
