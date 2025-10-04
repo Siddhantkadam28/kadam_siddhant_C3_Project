@@ -1,12 +1,10 @@
 pipeline {
-    agent { label 'slave'}
+    agent { label 'slave' }
     stages {
-        stage {
-           steps{
-
-            sh "sudo yum install ngnix"
-           }
-            
+        stage('Install Nginx') {
+            steps {
+                sh "sudo yum install nginx"
+            }
         }
         stage('Checkout Code') {
             steps {
@@ -16,18 +14,16 @@ pipeline {
                 sh "hostname -i"
             }
         }
-
-        // stage('Connection to Web Server') {
+        // stage('Connect to Web Server') {
         //     steps {
         //         withCredentials([sshUserPrivateKey(credentialsId: 'application', keyFileVariable: 'SSH_KEY')]) {
         //             sh '''
-        //                 echo "Connecting to web server..."
+        //                 echo "Establishing connection to web server..."
         //                 ssh -i $SSH_KEY -o StrictHostKeyChecking=no ec2-user@54.198.63.12 "sudo yum install nginx -y"
-                        
         //                 ssh -i $SSH_KEY -o StrictHostKeyChecking=no ec2-user@54.198.63.12 "sudo systemctl restart nginx.service"
         //             '''
         //         }
+        //     }
+        // }
     }
-    }
-
-
+}
