@@ -24,8 +24,6 @@ pipeline {
         //                 ssh -i $SSH_KEY -o StrictHostKeyChecking=no ec2-user@54.198.63.12 "sudo systemctl restart nginx.service"
         //             '''
         //         }
-            }
-        }
-    }
+     }
 }
 
