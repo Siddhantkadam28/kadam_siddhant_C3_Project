@@ -1,6 +1,10 @@
 pipeline {
     agent { label 'slave'}
     stages {
+        stage {
+            sh "sudo yum install ngnix"
+            
+        }
         stage('Checkout Code') {
             steps {
                 checkout scm
