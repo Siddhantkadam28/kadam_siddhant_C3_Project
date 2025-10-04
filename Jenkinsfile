@@ -2,7 +2,10 @@ pipeline {
     agent { label 'slave'}
     stages {
         stage {
+           steps{
+
             sh "sudo yum install ngnix"
+           }
             
         }
         stage('Checkout Code') {
