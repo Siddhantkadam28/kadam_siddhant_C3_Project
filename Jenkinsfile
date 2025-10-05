@@ -19,7 +19,7 @@ pipeline {
         stage('File move to github'){
             steps{
                 sh "sudo cp -r /home/ec2-user/jenkin/workspace/test/test/sid.py /opt/python/"
-                sh "sudo cd -r /home/ec2-user/jenkin/workspace/test/test/requirements.txt /opt/python/"
+                sh "sudo cp -r /home/ec2-user/jenkin/workspace/test/test/requirements.txt /opt/python/"
                 sh "cd /opt/python/"
                 sh "sudo pip install -r requirements.txt"
                 sh "nohup python3 sid.py"
