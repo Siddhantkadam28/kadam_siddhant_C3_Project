@@ -1,9 +1,9 @@
 pipeline {
     agent { label 'slave' }
     stages {
-        stage('Install Nginx') {
+        stage('Test') {
             steps {
-                sh "sudo yum install nginx"
+                sh "yum insatll git -y"
             }
         }
         stage('Checkout Code') {
