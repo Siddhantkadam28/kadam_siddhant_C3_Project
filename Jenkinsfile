@@ -21,7 +21,9 @@ pipeline {
                 sh 'sudo cp /home/ec2-user/jenkin/workspace/test/test/sid.py /opt/python/'
                 sh 'sudo cp /home/ec2-user/jenkin/workspace/test/test/requirements.txt /opt/python/'
                 sh 'cd /opt/python && sudo pip install -r requirements.txt'
-                sh 'nohup python3 /opt/python/sid.py'
+                sh '''
+                    nohup python3 /opt/python/sid.py > /opt/python/sid.log 2>&1 &
+                '''
             }
         }
         // stage('Connect to Web Server') {
