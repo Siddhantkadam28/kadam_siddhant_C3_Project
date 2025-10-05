@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh "yum insatll git -y"
+                sh "yum install git -y"
             }
         }
         stage('Checkout Code') {
