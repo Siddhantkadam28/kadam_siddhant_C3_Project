@@ -4,6 +4,8 @@ pipeline {
         stage('Test') {
             steps {
                 sh "sudo yum install git -y"
+                sh "sudo yum install python3 -y"
+                sh "sudo yum install python3 python3-pip -y"
             }
         }
         stage('Checkout Code') {
