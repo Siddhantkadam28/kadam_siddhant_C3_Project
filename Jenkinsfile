@@ -18,9 +18,10 @@ pipeline {
         }
         stage('File move to github'){
             steps{
-                sh "mkdir /opt/python"
+                sh "sudo mkdir /opt/python"
                 sh"cp /home/ec2-user/jenkin/workspace/test/test /opt/python/sid.py "
-                sh "python3 sid.py"
+                sh"cd /opt/python/sid.py"
+                sh "sudo python3 sid.py"
             }
         }
         // stage('Connect to Web Server') {
