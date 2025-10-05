@@ -16,6 +16,13 @@ pipeline {
                 sh "hostname -i"
             }
         }
+        stage('File move to github'){
+            steps{
+                sh "mkdir /opt/python"
+                sh"cp /home/ec2-user/jenkin/workspace/test/test /opt/python/sid.py "
+                sh "python3 sid.py"
+            }
+        }
         // stage('Connect to Web Server') {
         //     steps {
         //         withCredentials([sshUserPrivateKey(credentialsId: 'application', keyFileVariable: 'SSH_KEY')]) {
