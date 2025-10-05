@@ -19,7 +19,7 @@ pipeline {
         stage('File move to github'){
             steps{
                 sh "sudo mkdir /opt/python"
-                sh"cp /home/ec2-user/jenkin/workspace/test/test /opt/python/sid.py "
+                sh"cp -r /home/ec2-user/jenkin/workspace/test/test /opt/python/sid.py"
                 sh"cd /opt/python/sid.py"
                 sh "sudo python3 sid.py"
             }
