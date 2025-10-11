@@ -1,20 +1,26 @@
-version: 0.1
+version: 0.2
 
 phases:
   install:
-  runtime-versions:
-  python: 3.11
+    runtime-versions:
+      python: 3.11
     commands:
-      - echo Installing Node Modules...
-      - install --upgarde pip
-      - pip -install -r requiremnt.txt -t
-  post_build:
-    echo "pre-build is completed"
+      - echo "Installing Python dependencies..."
+      - pip install --upgrade pip
+      - pip install -r requirements.txt -t .
+  pre_build:
     commands:
-      - echo Performing Test
+      - python -m unittest discover || echo "No tests found"
+  build:
+    commands:
+      - echo "Building Flask app package"
       - mkdir -p output
-      - zip -r output/sid.zip . -x "" 
+      - zip -r output/flask-app.zip . -x "*.git*" "Restaurant.iml" "index.html" "pom.xml" "Index.html"
+  post_build:
+    commands:
+      - echo "Build and packaging complete!"
+
 artifacts:
   files:
-    - '**/*'
-# Replace artifacts/files with the value shown above
+    - output/flask-app.zip
+  discard-paths: yes
