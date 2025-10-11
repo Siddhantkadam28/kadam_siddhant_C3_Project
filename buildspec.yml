@@ -1,1 +1,20 @@
+version: 0.1
 
+phases:
+  install:
+  runtime-versions:
+  python: 3.11
+    commands:
+      - echo Installing Node Modules...
+      - install --upgarde pip
+      - pip -install -r requiremnt.txt -t
+  post_build:
+    echo "pre-build is completed"
+    commands:
+      - echo Performing Test
+      - mkdir -p output
+      - zip -r output/sid.zip . -x "" 
+artifacts:
+  files:
+    - '**/*'
+# Replace artifacts/files with the value shown above
