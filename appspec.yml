@@ -8,16 +8,16 @@ files:
 
 hooks:
   BeforeInstall:
-    - location: scripts/cleanup.sh
+    - location: script/cleanup.sh
       timeout: 60
       runas: root
       
   ApplicationStop:
-    - location: scripts/stop_app.sh
+    - location: script/stop_app.sh
       timeout: 60
       runas: root
 
   ApplicationStart:
-    - location: scripts/start_app.sh
+    - location: script/start_app.sh
       timeout: 300
       runas: root
