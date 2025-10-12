@@ -1,8 +1,8 @@
-#!/bin/bash
+!/bin/bash
 
 cd /home/ec2-user/my-python-app
 
-pip install requirements.txt -t;
+pip install requirements.txt .
 
 sleep 5s
 
