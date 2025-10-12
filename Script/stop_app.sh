@@ -5,3 +5,4 @@ if [ -n "$PIDS" ]; then
     echo "Old process killed"
 else
     echo "No old process running"
+fi
