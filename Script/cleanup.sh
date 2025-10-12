@@ -1,3 +1,4 @@
+#!/bin/bash
 #set -e
 
 ##TARGET_DIR="/home/ec2-user/my-python-app"
