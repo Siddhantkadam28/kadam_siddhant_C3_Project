@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /home/ec2-user/my-python-app
+cd /home/ec2-user/sid
 
 pip install requirements.txt .
 
