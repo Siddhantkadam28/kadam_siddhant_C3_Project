@@ -1,9 +1,10 @@
-!/bin/bash
-#set -e
+#!/bin/bash
+#set -e  # Uncomment this line to stop the script if any command fails
 
-##TARGET_DIR="/home/ec2-user/my-python-app"
+# Define the target directory (optional)
+# TARGET_DIR="/home/ec2-user/my-python-app"
 
-echo "Cleaning old files"
-##rm -rf "$TARGET_DIR"/*
+echo "Removing old files..."
+# rm -rf "$TARGET_DIR"/*   # Use this if TARGET_DIR is defined
 rm -rf "/home/ec2-user/my-python-app"/*
-echo "Cleanup complete."
+echo "Old files removed successfully."
