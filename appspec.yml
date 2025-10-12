@@ -3,7 +3,7 @@ os: linux
 
 files:
   - source: /
-    destination: /home/ec2-user/my-python-app
+    destination: /home/ec2-user/sid
     overwrite: true
 
 hooks:
